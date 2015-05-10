@@ -16,7 +16,7 @@ var encoder = function(link, done) {
 }
 
 var loopAndRender = function(links, res) {
-	async.mapSeries(links, encoder, function(err, results) {
+	async.map(links, encoder, function(err, results) {
 		res.render("query", {results: results})
 	})
 }
